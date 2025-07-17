@@ -36,8 +36,11 @@ Pinouts for connectors (QM, Lumberg, etc) (Mirror function to show front and bac
 ## Notes                                                                
 
 Any stored information is **NOT** stored in a cloud-based database, but instead on your browser's local storage.
+
 Chrome: "\AppData\Local\Google\Chrome\User Data\Default\Local Storage\"
+
 Firefox: "\AppData\Roaming\Mozilla\Firefox\Profiles\"
+
 Brave: "AppData\Local\BraveSoftware\Brave-Browser-Dev\User Data\Default\"
 
 ## Ideas
