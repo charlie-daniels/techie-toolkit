@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2022
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "__" }],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "all"],
+    "no-console": "off"
+  }
+}

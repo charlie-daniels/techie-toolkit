@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "toolkit for pekkie techies",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "start": "webpack serve",
