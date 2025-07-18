@@ -1,3 +1,5 @@
-import Testing from './scripts/modules/Test.js';
+import './index.html';
 
-Testing();
+import './styles/reset.css';
+import './styles/global.css';
+import './assets/icons/favicon-32x32.png';
