@@ -1,0 +1,32 @@
+{
+  "name": "techie-toolkit",
+  "version": "0.0.1",
+  "description": "toolkit for pekkie techies",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack serve",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlie-daniels/techie-toolkit.git"
+  },
+  "keywords": [
+    "toolkit"
+  ],
+  "author": "Charlie Daniels",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/charlie-daniels/techie-toolkit/issues"
+  },
+  "homepage": "https://github.com/charlie-daniels/techie-toolkit#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
