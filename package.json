@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
     "start": "webpack serve",
     "build": "webpack --mode production"
   },
