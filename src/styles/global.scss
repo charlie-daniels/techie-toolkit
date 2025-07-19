@@ -1,0 +1,69 @@
+// Primary brand colors
+$color-primary: #005BAB;         // Main accent color (from pektron.com)
+$color-primary-light: #0A7BDB;   // Hover/active states
+$color-primary-dark: #003F7F;    // Darker version for contrast accents
+
+// Backgrounds
+$color-bg-main: #0D1117;         // Page background
+$color-bg-secondary: #161B22;    // Cards, modals, secondary sections
+
+// Surface layers
+$color-surface: #1F2733;         // UI surface like cards, toolbars
+$color-elevation: #2A3442;       // Elevated elements (dropdowns, overlays)
+
+// Text
+$color-text-primary: #E6EDF3;    // High contrast text
+$color-text-secondary: #9BA7B4;  // Muted labels, descriptions
+$color-text-on-primary: #FFFFFF; // Text on blue buttons or blue surfaces
+
+// Borders and dividers
+$color-border: #30363D;          // Divider lines, input borders
+$color-border-light: #3C4450;    // Hover border, subtle edges
+
+// State indicators
+$color-success: #2EA043;         // Success highlights
+$color-warning: #E3B341;         // Warnings, cautions
+$color-error: #F85149;           // Errors, danger
+
+body, * { 
+  font-family: monospace;
+}
+
+/* Page formatting */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#header, #footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#workspace {
+  display: flex;
+  flex: 1;
+}
+
+#workspace .job {
+  flex-grow: 1;
+  margin: 0.5em
+}
+
+#workspace .activity {
+  flex-grow: 3;
+  margin: 0.5em
+}
+
+/* Activity area */
+
