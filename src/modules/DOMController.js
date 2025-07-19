@@ -15,7 +15,9 @@ const createActivityElement = () => {
 
     const getTimeHrsMins = () => {
       const currentTime = new Date();
-      return `${currentTime.getHours()}:${currentTime.getMinutes()}`;
+      const hours = String(currentTime.getHours()).padStart(2, '0');
+      const mins = String(currentTime.getMinutes()).padStart(2, '0');
+      return `${hours}:${mins}`;
     };
 
     const startTime = Object.assign(document.createElement('p'), {
