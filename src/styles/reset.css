@@ -1,6 +1,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+
+   Some resets have been added by me at the bottom
 */
 
 html, body, div, span, applet, object, iframe,
@@ -58,5 +60,9 @@ button {
 }
 
 input {
+  all: unset;
+}
+
+a {
   all: unset;
 }

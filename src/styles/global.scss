@@ -1,32 +1,38 @@
-// Primary brand colors
-$color-primary: #005BAB;         // Main accent color (from pektron.com)
-$color-primary-light: #0A7BDB;   // Hover/active states
-$color-primary-dark: #003F7F;    // Darker version for contrast accents
+/* Primary brand colors (based on cyan) */
+$color-primary: #00F6FF;         // Bright accent (main brand color)
+$color-primary-light: #66FCFF;   // Lighter hover/active
+$color-primary-dark: #00C2C9;    // Darker variant for contrast
 
-// Backgrounds
-$color-bg-main: #0D1117;         // Page background
-$color-bg-secondary: #161B22;    // Cards, modals, secondary sections
+/* Backgrounds */
+$color-bg-main: #0D1117;         // Main dark background
+$color-bg-secondary: #161B22;    // Cards, modals, secondary layers
 
-// Surface layers
-$color-surface: #1F2733;         // UI surface like cards, toolbars
-$color-elevation: #2A3442;       // Elevated elements (dropdowns, overlays)
+/* Surface layers */
+$color-surface: #1F2733;         // Surfaces like toolbars, panels
+$color-elevation: #2A3442;       // Popovers, dropdowns
 
-// Text
-$color-text-primary: #E6EDF3;    // High contrast text
-$color-text-secondary: #9BA7B4;  // Muted labels, descriptions
-$color-text-on-primary: #FFFFFF; // Text on blue buttons or blue surfaces
+/* Text */
+$color-text-primary: #E6EDF3;    // Main text
+$color-text-secondary: #9BA7B4;  // Muted text
+$color-text-on-primary: #000000; // Text on cyan backgrounds
 
-// Borders and dividers
-$color-border: #30363D;          // Divider lines, input borders
-$color-border-light: #3C4450;    // Hover border, subtle edges
+/* Borders and dividers */
+$color-border: #2C333A;          // Input borders and dividers
+$color-border-light: #3B424B;    // Subtle lines and outlines
 
-// State indicators
-$color-success: #2EA043;         // Success highlights
-$color-warning: #E3B341;         // Warnings, cautions
-$color-error: #F85149;           // Errors, danger
+/* State indicators */
+$color-green: #2EEA7F;         // Success/complete
+$color-yellow: #F4CE42;         // Warning/caution
+$color-red: #F45B69;           // Error/danger
+
+/* General */
 
 body, * { 
   font-family: monospace;
+}
+
+a {
+  cursor: pointer;
 }
 
 /* Page formatting */
@@ -42,6 +48,14 @@ body, * {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $color-primary-dark;
+  color: $color-text-on-primary;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+#footer {
+  padding: 0.2em 0.5em;
 }
 
 .title {
@@ -50,20 +64,70 @@ body, * {
   gap: 0.5em;
 }
 
+.menu {
+  margin: 0 0.5rem;
+}
+
 #workspace {
   display: flex;
   flex: 1;
+  background-color: $color-bg-main;
+  color: $color-text-primary;
 }
 
 #workspace .job {
-  flex-grow: 1;
+  flex: 1;
   margin: 0.5em
 }
 
-#workspace .activity {
-  flex-grow: 3;
-  margin: 0.5em
+#workspace .activities {
+  flex: 2;
+  margin: 0.5em;
 }
+
+/* Common */
 
 /* Activity area */
 
+.activity-list, .job-list {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.activity > * {
+  display: flex;
+}
+
+.activity > .lower {
+  justify-content: end;
+  gap: 1rem;
+}
+
+.project {
+  width: 4em;
+}
+
+.task {
+  flex-grow: 1;
+}
+
+.start-time {
+  color: $color-green;
+}
+
+.end-time {
+  color: $color-red;
+}
+
+.unset {
+  cursor: pointer;
+  color: $color-yellow;
+}

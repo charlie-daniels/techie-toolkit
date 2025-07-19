@@ -2,6 +2,11 @@ const createActivityElement = () => {
     const newElem = document.createElement('div');
     newElem.classList.add('activity');
 
+    const upperDiv = document.createElement('div');
+    upperDiv.className = 'upper';
+    const lowerDiv = document.createElement('div');
+    lowerDiv.className = 'lower';
+
     const project = Object.assign(document.createElement('input'), {
       className: 'project',
       placeholder: '0000',
@@ -12,6 +17,8 @@ const createActivityElement = () => {
       className: 'task',
       placeholder: 'task...',
     });
+
+    upperDiv.append(project, task);
 
     const getTimeHrsMins = () => {
       const currentTime = new Date();
@@ -27,7 +34,7 @@ const createActivityElement = () => {
 
     const endTime = Object.assign(document.createElement('p'), {
       className: 'end-time unset', 
-      textContent: 'complete',
+      textContent: 'end task',
     });
 
     const elapsedTime = Object.assign(document.createElement('p'), {
@@ -47,13 +54,9 @@ const createActivityElement = () => {
       elapsedTime.textContent = `${elapsedTotal.toFixed(2)}`;
     }, { once: true });
 
-    newElem.append(
-      project,
-      task,
-      startTime,
-      endTime,
-      elapsedTime
-    );
+    lowerDiv.append(startTime, endTime, elapsedTime);
+    
+    newElem.append(upperDiv, lowerDiv);
     return newElem;
 };
 
