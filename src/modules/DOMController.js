@@ -1,6 +1,6 @@
 const createActivityElement = () => {
     const newElem = document.createElement('div');
-    newElem.classList.add('activity');
+    newElem.classList.add('activity', 'unset');
 
     const upperDiv = document.createElement('div');
     upperDiv.className = 'upper';
@@ -45,6 +45,7 @@ const createActivityElement = () => {
     endTime.addEventListener('click', () => {
       endTime.classList.remove('unset');
       endTime.textContent = getTimeHrsMins();
+      newElem.classList.remove('unset');
 
       const start = startTime.textContent.split(':');
       const end = endTime.textContent.split(':');

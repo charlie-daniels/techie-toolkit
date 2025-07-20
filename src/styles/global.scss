@@ -75,6 +75,11 @@ a {
   color: $color-text-primary;
 }
 
+#workspace h2 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 #workspace .job {
   flex: 1;
   margin: 0.5em
@@ -93,13 +98,15 @@ a {
   margin: 0.5rem 0 0.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 1em;
 }
 
 .activity {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+  padding: 0.5em;
+  border: 2px solid $color-border;
 }
 
 .activity > * {
@@ -109,6 +116,10 @@ a {
 .activity > .lower {
   justify-content: end;
   gap: 1rem;
+}
+
+.activity.unset{
+  border: 2px dashed $color-border;
 }
 
 .project {
@@ -127,7 +138,7 @@ a {
   color: $color-red;
 }
 
-.unset {
+.end-time.unset {
   cursor: pointer;
   color: $color-yellow;
 }
