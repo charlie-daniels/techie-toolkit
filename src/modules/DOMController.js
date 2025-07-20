@@ -1,3 +1,5 @@
+import TimeManager from './TimeManager.js';
+
 const createActivityElement = () => {
     const newElem = document.createElement('div');
     newElem.classList.add('activity', 'unset');
@@ -18,18 +20,9 @@ const createActivityElement = () => {
       placeholder: 'task...',
     });
 
-    upperDiv.append(project, task);
-
-    const getTimeHrsMins = () => {
-      const currentTime = new Date();
-      const hours = String(currentTime.getHours()).padStart(2, '0');
-      const mins = String(currentTime.getMinutes()).padStart(2, '0');
-      return `${hours}:${mins}`;
-    };
-
     const startTime = Object.assign(document.createElement('p'), {
       className: 'start-time',
-      textContent: getTimeHrsMins(),
+      textContent: TimeManager.getTimeHrsMins(),
     });
 
     const endTime = Object.assign(document.createElement('p'), {
@@ -41,20 +34,22 @@ const createActivityElement = () => {
       className: 'elapsed-time', 
     });
 
-    // complete task, set time, calc elapsed time
+    /* complete task, set time, set elapsed time */
+
     endTime.addEventListener('click', () => {
       endTime.classList.remove('unset');
-      endTime.textContent = getTimeHrsMins();
       newElem.classList.remove('unset');
+
+      endTime.textContent = TimeManager.getTimeHrsMins();
 
       const start = startTime.textContent.split(':');
       const end = endTime.textContent.split(':');
-      const elapsedHrs = end[0] - start[0];
-      const elapsedMins = end[1] - start[1];
-      const elapsedTotal = elapsedHrs + (elapsedMins / 60);
-      elapsedTime.textContent = `${elapsedTotal.toFixed(2)}`;
+      const elapsed = TimeManager.hrsMinsToElapsed(start, end);
+
+      elapsedTime.textContent = `${elapsed}`;
     }, { once: true });
 
+    upperDiv.append(project, task);
     lowerDiv.append(startTime, endTime, elapsedTime);
     
     newElem.append(upperDiv, lowerDiv);
@@ -71,9 +66,10 @@ const focusNewActivity = () => {
   document.querySelector('.activity-list :first-child .project').focus();
 };
 
-// Listeners
+/* Listeners */
 
-// Create new element and focus the first input of it 
+/* Create new element and focus the first input of it */
+
 const detectNewActivity = () => {
   const btnNewActivity = document.querySelector('.new-activity');
   btnNewActivity.addEventListener('click', () => {
