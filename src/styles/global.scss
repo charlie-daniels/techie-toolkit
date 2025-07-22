@@ -48,8 +48,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $color-primary-dark;
-  color: $color-text-on-primary;
+  background-color: $color-surface;
+  color: $color-text-primary;
   font-weight: bolder;
   font-size: 1rem;
 }
@@ -92,6 +92,10 @@ a {
 
 /* Common */
 
+.hidden {
+  display: none;
+}
+
 /* Activity area */
 
 .activity-list, .job-list {
@@ -122,6 +126,13 @@ a {
   border: 2px dashed $color-border;
 }
 
+.editor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+}
+
 .project {
   width: 4em;
 }
@@ -130,15 +141,19 @@ a {
   flex-grow: 1;
 }
 
-.start-time {
+.status-complete-start {
   color: $color-green;
 }
 
-.end-time {
+.status-complete-end {
   color: $color-red;
 }
 
-.end-time.unset {
+.status-incomplete {
   cursor: pointer;
   color: $color-yellow;
+}
+
+.end-task {
+  margin-left: -9px;
 }
