@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   "homepage": "https://github.com/charlie-daniels/techie-toolkit#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "sass": "^1.89.2",
@@ -31,5 +34,8 @@
     "webpack": "^5.100.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.52.1"
   }
 }
