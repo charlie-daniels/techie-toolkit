@@ -73,6 +73,7 @@ a {
   flex: 1;
   background-color: $color-bg-main;
   color: $color-text-primary;
+  padding: 1rem;
 }
 
 #workspace h2 {
@@ -82,12 +83,10 @@ a {
 
 #workspace .job {
   flex: 1;
-  margin: 0.5em
 }
 
 #workspace .activities {
   flex: 2;
-  margin: 0.5em;
 }
 
 /* Common */
