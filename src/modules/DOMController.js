@@ -1,10 +1,12 @@
 import TimeManager from './TimeManager.js';
-import Storage from './Storage.js';
+import { FileManager } from './Storage.js';
 
 /* TODO: 
   Move imports to index.js
   Requires module class restructure
   Must be called from index.js
+
+  Rewrite to have forms that submit the info when task is ended? or when store activities is pressed.
 */
 
 const createActivityElement = () => {
@@ -28,12 +30,12 @@ const createActivityElement = () => {
     });
 
     const startTime = Object.assign(document.createElement('p'), {
-      className: 'start-time status-complete-start value',
+      className: 'start-time status-complete-start value date-type',
       textContent: TimeManager.getTimeHrsMins(),
     });
 
     const endTime = Object.assign(document.createElement('p'), {
-      className: 'end-time status-complete-end unset value', 
+      className: 'end-time status-complete-end unset value date-type', 
     });
 
     const elapsedTime = Object.assign(document.createElement('p'), {
@@ -44,6 +46,8 @@ const createActivityElement = () => {
       className: 'end-task status-incomplete unset', 
       textContent: 'end task',
     });
+
+    /* TODO: move this to listener section and segment */
 
     /* complete task, set time, set elapsed time */
 
@@ -69,13 +73,13 @@ const createActivityElement = () => {
 };
 
 const appendActivity = () => {
-  const activityList = document.querySelector('.activity-list');
+  const activityList = document.querySelector('.activities > .list');
   const newElem = createActivityElement();
   activityList.insertBefore(newElem, activityList.firstChild);
 };
 
 const focusNewActivity = () => {
-  document.querySelector('.activity-list :first-child .project').focus();
+  document.querySelector('.activities > .list :first-child .project').focus();
 };
 
 /* Listeners */
@@ -85,15 +89,17 @@ const initGetAllActivites = () => {
   const getActivitiesValues = () => {
     return [...document.querySelectorAll('.activity')].map((activity) => {
       return [...activity.querySelectorAll('.value')].reduce((obj, next) => {
-        return {...obj, [next.classList[0]]: next.textContent || next.value} ;
+        /* If time value, convert to Date type */
+        return next.classList.contains('date-type') ?
+        {...obj, [next.classList[0]]: TimeManager.HrsMinsToDate(next.textContent)} :
+        {...obj, [next.classList[0]]: next.textContent || next.value} ;
       }, {});
     });
   };
 
   const btnStoreActivities = document.querySelector('#store-activities');
   btnStoreActivities.addEventListener('click', () => {
-    console.log(getActivitiesValues());
-/*     Storage.storeActivities(getActivitiesValues()); */
+    FileManager.storeActivities(getActivitiesValues());
   });
 };
 
