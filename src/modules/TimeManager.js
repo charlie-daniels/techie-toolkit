@@ -7,6 +7,16 @@ export default (() => {
     return { hrs, mins };
   };
 
+  const HrsMinsToDate = (hrsMins) => {
+    const hrsMinsArr = hrsMins.split(':');
+
+    const newDate = new Date(Date.now());
+    newDate.setHours(hrsMinsArr[0]);
+    newDate.setMinutes(hrsMinsArr[1]);
+
+    return newDate;
+  };
+
   const getTimeHrsMins = () => {
     const currentTime = dateToHrsMins(new Date());
     
@@ -21,6 +31,8 @@ export default (() => {
   };
 
   return {
+    dateToHrsMins,
+    HrsMinsToDate,
     getTimeHrsMins,
     hrsMinsToElapsed,
   };
