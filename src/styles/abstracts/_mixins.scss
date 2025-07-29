@@ -1,0 +1,11 @@
+@use '../abstracts/variables';
+
+/* Shapes */
+
+@mixin radius-rounded {
+  border-radius: variables.$radius-standard;
+}
+
+@mixin radius-rounded-skewed {
+  border-radius: variables.$radius-primary 0 variables.$radius-primary 0;
+}

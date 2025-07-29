@@ -1,0 +1,95 @@
+@use 'base';
+@use 'components';
+
+@use 'abstracts/fonts';
+
+/* Global settings */
+
+/* Elements */
+
+body, * { 
+  font-family: fonts.$primary;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* 
+
+.jobs {
+  flex: 1;
+}
+
+.activities {
+  flex: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+#new-activity {
+  background-color: $color-bg-tertiary;
+  padding: 1rem 0 1rem 0;
+}
+
+.list {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  padding: 0.5em;
+  border: 2px solid $color-border;
+}
+
+.activity > * {
+  display: flex;
+}
+
+.activity > .lower {
+  justify-content: end;
+  gap: 1rem;
+}
+
+.activity.unset{
+  border: 2px dashed $color-border;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.project {
+  width: 4em;
+}
+
+.task {
+  flex-grow: 1;
+}
+
+.status-complete-start {
+  color: green;
+}
+
+.status-complete-end {
+  color: red;
+}
+
+.status-incomplete {
+  cursor: pointer;
+  color: yellow;
+}
+
+.end-task {
+  margin-left: -9px;
+} */

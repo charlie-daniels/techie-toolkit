@@ -1,0 +1,10 @@
+@use '../abstracts/mixins';
+@use '../abstracts/colors';
+
+nav {
+  @include mixins.radius-rounded-skewed;
+  background-color: colors.$bg-secondary;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

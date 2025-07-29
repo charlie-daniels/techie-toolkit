@@ -1,0 +1,28 @@
+/* Primary brand colors (based on pektron colours) */
+$primary: #00F6FF;         // Bright accent (main brand color)
+$primary-light: #66FCFF;   // Lighter hover/active
+$primary-dark: #00C2C9;    // Darker variant for contrast
+
+/* Backgrounds */
+$bg-main: #0D1117;           // Main dark background
+$bg-secondary: #161B22;      // Cards, modals, secondary layers
+$bg-tertiary: #1E242B;       // Slightly lighter background layer
+$bg-quaternary: #27303A;     // Even lighter background for highlights
+
+/* Surface layers */
+$surface: #1F2733;         // Surfaces like toolbars, panels
+$elevation: #2A3442;       // Popovers, dropdowns
+
+/* Text */
+$text-primary: #E6EDF3;    // Main text
+$text-secondary: #9BA7B4;  // Muted text
+$text-on-primary: #000000; // Text on cyan backgrounds
+
+/* Borders and dividers */
+$border: #2C333A;          // Input borders and dividers
+$border-light: #3B424B;    // Subtle lines and outlines
+
+/* State indicators */
+$success: #2EEA7F;         // Success/complete
+$caution: #F4CE42;         // Warning/caution
+$warning: #F45B69;           // Error/danger
