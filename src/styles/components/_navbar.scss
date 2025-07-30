@@ -1,10 +1,19 @@
+@use '../abstracts/variables';
 @use '../abstracts/mixins';
 @use '../abstracts/colors';
+@use '../abstracts/fonts';
 
 nav {
-  @include mixins.radius-rounded-skewed;
+  @include mixins.flex-horizontal;
+
+  padding: variables.$padding-primary;
   background-color: colors.$bg-secondary;
-  padding: 0.6rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: fonts.$size-header-primary;
+  font-weight: fonts.$weight-header;
+  color: colors.$text-primary;
+}
+
+.menu {
+  @include mixins.flex-horizontal;
+  gap: variables.$padding-primary;
 }

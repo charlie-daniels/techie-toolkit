@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../abstracts/colors';
+@use '../abstracts/fonts';
+
+footer > ul {
+  @include mixins.flex-horizontal;
+  
+  padding: variables.$padding-primary;
+  font-size: fonts.$size-header-secondary;
+  color: colors.$text-primary;
+}

@@ -1,0 +1,9 @@
+@use '../abstracts/colors';
+
+.task {
+  border: 2px solid colors.$border;
+}
+
+.task.active {
+  border-style: dashed;
+}

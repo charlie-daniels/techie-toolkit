@@ -7,7 +7,11 @@
 
 /* Elements */
 
-body, * { 
+html {
+  font-size: 100%;
+}
+
+body { 
   font-family: fonts.$primary;
 }
 
@@ -15,19 +19,18 @@ a {
   cursor: pointer;
 }
 
-/* 
 
-.jobs {
-  flex: 1;
-}
-
-.activities {
-  flex: 2;
-}
+/* Classes */
 
 .hidden {
   display: none;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+/* 
 
 #new-activity {
   background-color: $color-bg-tertiary;
@@ -46,7 +49,6 @@ a {
   flex-direction: column;
   gap: 0.3em;
   padding: 0.5em;
-  border: 2px solid $color-border;
 }
 
 .activity > * {
@@ -69,25 +71,8 @@ a {
   gap: 2em;
 }
 
-.project {
-  width: 4em;
-}
-
 .task {
   flex-grow: 1;
-}
-
-.status-complete-start {
-  color: green;
-}
-
-.status-complete-end {
-  color: red;
-}
-
-.status-incomplete {
-  cursor: pointer;
-  color: yellow;
 }
 
 .end-task {

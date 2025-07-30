@@ -1,29 +1,20 @@
+@use '../abstracts/variables';
 @use '../abstracts/colors';
+@use '../abstracts/mixins';
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-vertical;
+
   height: 100dvh;
   background-color: colors.$bg-main;
 }
 
-nav, footer {
-  margin: 0.4rem;
-  display: flex;
-  justify-content: space-between;
-  color: colors.$text-primary;
-  font-weight: bold;
-  font-size: 1rem;
-}
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 
-footer {
-  padding: 0.2rem 0.5rem;
-}
-
-#workspace {
-  display: flex;
-  gap: 1rem;
-  flex: 1;
+  padding: variables.$padding-primary;
+  flex-grow: 1;
+  gap: variables.$padding-secondary;
   color: colors.$text-primary;
-  padding: 1rem;
 }
