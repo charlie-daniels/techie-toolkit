@@ -1,0 +1,25 @@
+@use '../abstracts/variables';
+
+/* Shapes */
+
+@mixin radius-rounded {
+  border-radius: variables.$radius-primary;
+}
+
+@mixin radius-rounded-skewed {
+  border-radius: variables.$radius-primary 0 variables.$radius-primary 0;
+}
+
+/* Layout */
+
+@mixin flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

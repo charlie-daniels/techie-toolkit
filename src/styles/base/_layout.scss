@@ -1,0 +1,20 @@
+@use '../abstracts/variables';
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+
+.wrapper {
+  @include mixins.flex-vertical;
+
+  height: 100dvh;
+  background-color: colors.$bg-main;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  padding: variables.$padding-primary;
+  flex-grow: 1;
+  gap: variables.$padding-secondary;
+  color: colors.$text-primary;
+}

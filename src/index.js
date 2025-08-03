@@ -1,4 +1,7 @@
-import './styles/reset.css';
-import './styles/global.scss';
+import './styles/styles.scss';
+import { initEvents } from './modules/events.js';
 
-import './modules/DOMController.js';
+initEvents();
+
+
+
